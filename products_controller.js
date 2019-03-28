@@ -46,9 +46,9 @@ module.exports = {
         const {desc} = req.query
 
         db.update_product([id, desc])
-        .then(products => {
+        .then(
             res.status(200).send(`product updated`)
-        })
+        )
         .catch(err => {
             res.status(500).send({errorMessage: `Something went wrong`})
             console.log(err)
@@ -60,9 +60,9 @@ module.exports = {
         const {id} = req.params
 
         db.delete_product(id)
-        .then(products => {
+        .then(
             res.status(200).send(`product deleted`)
-        })
+        )
         .catch(err => {
             res.status(500).send({errorMessage: `Something went wrong`})
             console.log(err)
